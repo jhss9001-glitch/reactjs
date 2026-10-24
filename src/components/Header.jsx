@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Menu, SunMoon } from "lucide-react";
 import { useTheme } from "../hooks/useTheme.js";
 
 const NAV = [
@@ -40,7 +41,7 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
-          <button type="button" className="icon-btn" aria-label="다크 모드 전환" onClick={toggle}>◐</button>
+          <button type="button" className="icon-btn" aria-label="다크 모드 전환" onClick={toggle}><SunMoon aria-hidden="true" /></button>
           <a href="#apply" className="btn btn-primary btn-sm">수강 신청</a>
           <button
             type="button"
@@ -49,7 +50,7 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="nav"
             onClick={() => setOpen((o) => !o)}
-          >☰</button>
+          ><Menu aria-hidden="true" /></button>
         </div>
       </div>
     </header>

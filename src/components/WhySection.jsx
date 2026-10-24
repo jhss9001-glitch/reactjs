@@ -17,7 +17,7 @@ export default function WhySection() {
         <div className="pain-grid">
           {PAINS.map((p) => (
             <Reveal as="article" className="card pain" key={p.title}>
-              <span className="pain-icon" aria-hidden="true">{p.icon}</span>
+              <span className="pain-icon" aria-hidden="true"><p.icon size={26} /></span>
               <h3>{p.title}</h3>
               <p>{p.text}</p>
             </Reveal>

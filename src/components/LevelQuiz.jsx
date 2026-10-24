@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { PartyPopper } from "lucide-react";
 import { QUIZ, QUIZ_RESULTS } from "../data.js";
 import Reveal from "./Reveal.jsx";
 import SectionHead from "./SectionHead.jsx";
@@ -39,7 +40,7 @@ export default function LevelQuiz() {
   } else {
     let feedback = "";
     if (picked !== null) {
-      feedback = picked === item.answer ? "정답입니다! 👏" : `정답은 “${item.options[item.answer]}”입니다.`;
+      feedback = picked === item.answer ? <>정답입니다! <PartyPopper size={18} aria-hidden="true" /></> : `정답은 “${item.options[item.answer]}”입니다.`;
     }
     body = (
       <>

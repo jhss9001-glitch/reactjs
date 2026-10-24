@@ -3,6 +3,8 @@
  * 페이지에 표시되는 콘텐츠는 모두 여기서 수정합니다.
  * ========================================================= */
 
+import { Globe, MessageCircleOff, ShoppingBag, Speech, Stethoscope, TriangleAlert } from "lucide-react";
+
 export const LANGS = [
   { code: "en", label: "English", tts: "en-US" },
   { code: "zh", label: "中文", tts: "zh-CN" },
@@ -27,10 +29,10 @@ export const HERO_CHATS = {
 
 /* 왜 지금인가 */
 export const PAINS = [
-  { icon: "🛍️", title: "늘어나는 K-뷰티 쇼핑객", text: "더마 화장품·재생 크림·연고를 찾아 약국을 일부러 방문하는 외국인 고객이 많아졌습니다." },
-  { icon: "😶", title: "제품만 건네고 끝나는 응대", text: "“This one, good.” 이후 말이 막혀 사용법과 주의사항을 전하지 못한 경험, 있으신가요?" },
-  { icon: "⚠️", title: "설명이 빠지면 생기는 문제", text: "레티놀의 광과민, 과산화벤조일의 탈색처럼 꼭 전해야 할 정보가 언어 장벽에 막힙니다." },
-  { icon: "🌏", title: "말이 통하면 단골이 됩니다", text: "정확한 한마디가 리뷰와 재방문으로 이어집니다. 복약지도는 가장 강력한 서비스입니다." },
+  { icon: ShoppingBag, title: "늘어나는 K-뷰티 쇼핑객", text: "더마 화장품·재생 크림·연고를 찾아 약국을 일부러 방문하는 외국인 고객이 많아졌습니다." },
+  { icon: MessageCircleOff, title: "제품만 건네고 끝나는 응대", text: "“This one, good.” 이후 말이 막혀 사용법과 주의사항을 전하지 못한 경험, 있으신가요?" },
+  { icon: TriangleAlert, title: "설명이 빠지면 생기는 문제", text: "레티놀의 광과민, 과산화벤조일의 탈색처럼 꼭 전해야 할 정보가 언어 장벽에 막힙니다." },
+  { icon: Globe, title: "말이 통하면 단골이 됩니다", text: "정확한 한마디가 리뷰와 재방문으로 이어집니다. 복약지도는 가장 강력한 서비스입니다." },
 ];
 
 /* 표현 미리듣기 */
@@ -204,8 +206,8 @@ export const TARGETS = [
 
 /* 강사진 (실제 강사 정보로 교체하세요) */
 export const TEAM = [
-  { emoji: "👩‍⚕️", role: "대표 강사 · 약사", text: "관광 상권 약국 실무 경험을 바탕으로 상황별 커리큘럼과 복약지도 스크립트를 설계합니다." },
-  { emoji: "🗣️", role: "원어민 튜터 · EN / ZH / JA", text: "언어별 원어민 튜터가 발음과 자연스러운 표현을 코칭하고 롤플레이 상대가 되어 드립니다." },
+  { icon: Stethoscope, role: "대표 강사 · 약사", text: "관광 상권 약국 실무 경험을 바탕으로 상황별 커리큘럼과 복약지도 스크립트를 설계합니다." },
+  { icon: Speech, role: "원어민 튜터 · EN / ZH / JA", text: "언어별 원어민 튜터가 발음과 자연스러운 표현을 코칭하고 롤플레이 상대가 되어 드립니다." },
 ];
 
 /* 수강료 */

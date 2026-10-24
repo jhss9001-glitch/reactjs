@@ -18,7 +18,7 @@ export default function ForYou() {
           <div className="team">
             {TEAM.map((m) => (
               <article className="card member" key={m.role}>
-                <span className="avatar" aria-hidden="true">{m.emoji}</span>
+                <span className="avatar" aria-hidden="true"><m.icon size={28} /></span>
                 <div>
                   <h3>{m.role}</h3>
                   <p>{m.text}</p>

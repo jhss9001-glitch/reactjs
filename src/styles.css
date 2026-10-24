@@ -95,9 +95,16 @@ button, input, select { font: inherit; color: inherit; }
 
 .icon-btn {
   width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border);
-  background: var(--surface); cursor: pointer; font-size: 1.1rem;
+  display: grid; place-items: center; color: var(--text);
+  background: var(--surface); cursor: pointer;
 }
 .icon-btn:hover { border-color: var(--primary); }
+
+/* ---------- 아이콘 (Lucide) ---------- */
+.lucide { flex: none; }
+.icon-btn .lucide { width: 20px; height: 20px; }
+.btn .lucide, .float-badge .lucide { width: 1.1em; height: 1.1em; }
+.float-badge .lucide { color: var(--primary); }
 
 /* ---------- 헤더 ---------- */
 .site-header {
@@ -171,7 +178,8 @@ button, input, select { font: inherit; color: inherit; }
   background: var(--mint-soft); color: var(--mint); font-weight: 600;
 }
 .float-badge {
-  position: absolute; padding: 10px 14px; border-radius: 14px; font-size: .88rem; font-weight: 700;
+  position: absolute; display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 14px; border-radius: 14px; font-size: .88rem; font-weight: 700;
   background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow);
   animation: float 5s ease-in-out infinite;
 }
@@ -189,7 +197,7 @@ button, input, select { font: inherit; color: inherit; }
 .pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .pain-icon {
   display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px;
-  background: var(--primary-soft); font-size: 1.5rem; margin-bottom: 16px;
+  background: var(--primary-soft); color: var(--primary); margin-bottom: 16px;
 }
 .pain p { color: var(--muted); margin: 0; font-size: .95rem; }
 
@@ -217,6 +225,7 @@ button, input, select { font: inherit; color: inherit; }
 .ko { color: var(--muted); font-size: .92rem; flex: 1; }
 .phrase-actions { display: flex; gap: 8px; }
 .chip-btn {
+  display: inline-flex; align-items: center; gap: 5px;
   border: 1px solid var(--border); background: transparent; border-radius: 999px;
   padding: .4em .9em; font-size: .85rem; font-weight: 600; cursor: pointer;
 }
@@ -273,7 +282,7 @@ button, input, select { font: inherit; color: inherit; }
 .opt:disabled { cursor: default; }
 .opt.correct { border-color: var(--success); background: var(--mint-soft); }
 .opt.wrong { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 12%, transparent); }
-.quiz-feedback { margin: 16px 0 0; min-height: 1.6em; font-weight: 600; }
+.quiz-feedback { display: flex; align-items: center; gap: 6px; margin: 16px 0 0; min-height: 1.6em; font-weight: 600; }
 .quiz-result { text-align: center; animation: pop .4s ease; }
 .score { font-size: 3.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0; }
 .score small { font-size: 1.2rem; color: var(--muted); }
@@ -296,7 +305,7 @@ button, input, select { font: inherit; color: inherit; }
 .member { display: flex; gap: 16px; align-items: flex-start; padding: 22px; }
 .avatar {
   flex: none; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
-  background: var(--primary-soft); font-size: 1.6rem;
+  background: var(--primary-soft); color: var(--primary);
 }
 .member p { color: var(--muted); margin: 0; font-size: .95rem; }
 

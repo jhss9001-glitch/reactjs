@@ -1,3 +1,4 @@
+import { Volume2 } from "lucide-react";
 import { useState } from "react";
 import { LANGS, PHRASE_CATEGORIES, PHRASES } from "../data.js";
 import { useToast } from "../context/ToastContext.jsx";
@@ -60,7 +61,7 @@ export default function PhrasePreview() {
               <p className="foreign" lang={lang.code}>{p[lang.code]}</p>
               <p className="ko">{p.ko}</p>
               <div className="phrase-actions">
-                <button type="button" className="chip-btn" onClick={() => onSpeak(p)}>🔊 듣기</button>
+                <button type="button" className="chip-btn" onClick={() => onSpeak(p)}><Volume2 size={16} aria-hidden="true" /> 듣기</button>
                 <button type="button" className="chip-btn" onClick={() => onCopy(p)}>복사</button>
               </div>
             </article>

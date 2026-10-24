@@ -1,3 +1,4 @@
+import { Droplet, Pill, Play } from "lucide-react";
 import { CURRICULUM, LANGS } from "../data.js";
 import ChatCard from "./ChatCard.jsx";
 import Reveal from "./Reveal.jsx";
@@ -27,7 +28,7 @@ export default function Hero() {
           </p>
           <div className="hero-cta">
             <a href="#apply" className="btn btn-primary">얼리버드로 시작하기</a>
-            <a href="#preview" className="btn btn-ghost">무료 표현 들어보기 ▶</a>
+            <a href="#preview" className="btn btn-ghost">무료 표현 들어보기 <Play aria-hidden="true" /></a>
           </div>
           <ul className="hero-stats" aria-label="강의 구성 요약">
             {STATS.map((s) => (
@@ -39,8 +40,8 @@ export default function Hero() {
         {/* 상담 대화 목업 */}
         <Reveal className="hero-visual" aria-label="외국인 고객 상담 예시">
           <ChatCard />
-          <div className="float-badge badge-1">🧴 성분 상담</div>
-          <div className="float-badge badge-2">💊 복약지도</div>
+          <div className="float-badge badge-1"><Droplet aria-hidden="true" /> 성분 상담</div>
+          <div className="float-badge badge-2"><Pill aria-hidden="true" /> 복약지도</div>
         </Reveal>
       </div>
     </section>
