@@ -294,8 +294,7 @@ button, input, select { font: inherit; color: inherit; }
 .quiz-result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
 
 /* ---------- 추천 대상 & 강사진 ---------- */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-.check-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
+.check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
 .check-list li {
   position: relative; padding: 14px 16px 14px 48px; background: var(--surface);
   border: 1px solid var(--border); border-radius: 14px; font-weight: 500;
@@ -305,13 +304,22 @@ button, input, select { font: inherit; color: inherit; }
   display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
   background: var(--mint); color: #fff; font-size: .75rem; font-weight: 800;
 }
-.team { display: grid; gap: 14px; margin-top: 20px; }
-.member { display: flex; gap: 16px; align-items: flex-start; padding: 22px; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.member { display: flex; flex-direction: column; gap: 18px; padding: 28px; }
+.member-head { display: flex; gap: 16px; align-items: center; }
+.member-head h3 { font-size: 1.3rem; margin: 0; }
+.member-role { color: var(--primary); font-weight: 700; font-size: .9rem; margin: 0; }
 .avatar {
   flex: none; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
   background: var(--primary-soft); color: var(--primary);
 }
-.member p { color: var(--muted); margin: 0; font-size: .95rem; }
+.career { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: .95rem; }
+.career li { padding-left: 18px; position: relative; }
+.career li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); }
+.member-quote {
+  margin: auto 0 0; padding: 16px 18px; border-radius: 14px; background: var(--tint);
+  color: var(--muted); font-size: .95rem; line-height: 1.7;
+}
 
 /* ---------- 수강료 ---------- */
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
@@ -395,6 +403,7 @@ button, input, select { font: inherit; color: inherit; }
 /* ---------- 반응형 ---------- */
 @media (max-width: 1000px) {
   .pain-grid, .steps { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
   .nav { gap: 16px; }
 }
 
@@ -409,7 +418,7 @@ button, input, select { font: inherit; color: inherit; }
   }
   .nav.open { display: flex; }
   .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); }
-  .hero-inner, .two-col, .apply-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-inner, .apply-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-visual { max-width: 480px; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; }
   .plan.featured, .plan.featured.reveal.in { transform: none; }
