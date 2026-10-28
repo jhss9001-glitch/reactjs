@@ -4,7 +4,7 @@ import SectionHead from "./SectionHead.jsx";
 
 export default function Steps() {
   return (
-    <section className="section section-tint">
+    <section className="section">
       <div className="container">
         <SectionHead eyebrow="How you learn" title="듣고, 따라 하고, 롤플레이로 완성" />
         <ol className="steps">

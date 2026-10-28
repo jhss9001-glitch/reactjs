@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { LANGS, PLANS } from "../data.js";
+import { PLANS } from "../data.js";
 import { useToast } from "../context/ToastContext.jsx";
 import { won } from "../utils/format.js";
 import Reveal from "./Reveal.jsx";
 
-const EMPTY = { name: "", email: "", pharmacy: "", langs: [], agree: false };
+const EMPTY = { name: "", email: "", pharmacy: "", agree: false };
 
 export default function ApplyForm({ plan, onPlanChange }) {
   const toast = useToast();
@@ -15,10 +15,6 @@ export default function ApplyForm({ plan, onPlanChange }) {
     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setForm((f) => ({ ...f, [key]: value }));
   };
-  const toggleLang = (code) => setForm((f) => ({
-    ...f,
-    langs: f.langs.includes(code) ? f.langs.filter((c) => c !== code) : [...f.langs, code],
-  }));
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +24,6 @@ export default function ApplyForm({ plan, onPlanChange }) {
     let msg = "";
     if (!name) msg = "이름을 입력해 주세요.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) msg = "올바른 이메일 주소를 입력해 주세요.";
-    else if (!form.langs.length) msg = "관심 언어를 하나 이상 선택해 주세요.";
     else if (!form.agree) msg = "개인정보 수집·이용에 동의해 주세요.";
 
     setError(msg);
@@ -40,12 +35,12 @@ export default function ApplyForm({ plan, onPlanChange }) {
   };
 
   return (
-    <section className="section apply" id="apply">
+    <section className="section" id="apply">
       <div className="container apply-inner">
         <Reveal className="apply-copy">
           <p className="eyebrow">Apply</p>
           <h2>다음 외국인 고객부터,<br />자신 있게.</h2>
-          <p>얼리버드 신청 시 <b>약국 비치용 3개 국어 복약지도 카드(PDF)</b>를 함께 드립니다.</p>
+          <p>얼리버드 신청 시 <b>약국 비치용 영어 복약지도 카드(PDF)</b>를 함께 드립니다.</p>
         </Reveal>
 
         <Reveal as="form" className="apply-form" noValidate onSubmit={onSubmit}>
@@ -58,17 +53,6 @@ export default function ApplyForm({ plan, onPlanChange }) {
           <label>약국명 <span className="optional">(선택)</span>
             <input name="pharmacy" type="text" placeholder="예: 명동온누리약국" value={form.pharmacy} onChange={set("pharmacy")} />
           </label>
-          <fieldset>
-            <legend>관심 언어</legend>
-            <div className="lang-checks">
-              {LANGS.map((l) => (
-                <label className="pill" key={l.code}>
-                  <input type="checkbox" name="langs" value={l.code} checked={form.langs.includes(l.code)} onChange={() => toggleLang(l.code)} />
-                  <span>{l.label}</span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
           <label>플랜
             <select name="plan" value={plan} onChange={(e) => onPlanChange(e.target.value)}>
               {PLANS.map((p) => (

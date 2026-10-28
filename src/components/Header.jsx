@@ -1,17 +1,9 @@
 import { useEffect, useState } from "react";
 import { Menu, SunMoon } from "lucide-react";
+import { NAV } from "../data.js";
 import { useTheme } from "../hooks/useTheme.js";
 
-const NAV = [
-  { href: "#why", label: "왜 지금인가" },
-  { href: "#preview", label: "표현 미리듣기" },
-  { href: "#curriculum", label: "커리큘럼" },
-  { href: "#quiz", label: "레벨 테스트" },
-  { href: "#pricing", label: "수강료" },
-  { href: "#faq", label: "FAQ" },
-];
-
-export default function Header() {
+export default function Header({ route }) {
   const { toggle } = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -24,9 +16,9 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`site-header${scrolled ? " scrolled" : ""}`} id="top">
+    <header className={`site-header${scrolled ? " scrolled" : ""}`}>
       <div className="container header-inner">
-        <a href="#top" className="brand" aria-label="K-Pharm Talk 홈">
+        <a href="#/" className="brand" aria-label="K-Pharm Talk 홈">
           <span className="logo" aria-hidden="true">K<i>Rx</i></span>
           <span className="brand-name">K-Pharm Talk</span>
         </a>
@@ -37,12 +29,14 @@ export default function Header() {
           aria-label="주요 메뉴"
           onClick={(e) => { if (e.target.closest("a")) setOpen(false); }}
         >
-          {NAV.map((n) => <a key={n.href} href={n.href}>{n.label}</a>)}
+          {NAV.map((n) => (
+            <a key={n.id} href={`#/${n.id}`} aria-current={route === n.id ? "page" : undefined}>{n.label}</a>
+          ))}
         </nav>
 
         <div className="header-actions">
           <button type="button" className="icon-btn" aria-label="다크 모드 전환" onClick={toggle}><SunMoon aria-hidden="true" /></button>
-          <a href="#apply" className="btn btn-primary btn-sm">수강 신청</a>
+          <a href="#/apply" className="btn btn-primary btn-sm">수강 신청</a>
           <button
             type="button"
             className="icon-btn menu-btn"

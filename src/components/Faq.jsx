@@ -3,7 +3,7 @@ import SectionHead from "./SectionHead.jsx";
 
 export default function Faq() {
   return (
-    <section className="section section-tint" id="faq">
+    <section className="section" id="faq">
       <div className="container narrow">
         <SectionHead eyebrow="FAQ" title="자주 묻는 질문" />
         <div className="faq">

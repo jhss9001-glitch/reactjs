@@ -22,7 +22,7 @@ export default function Pricing({ onSelectPlan }) {
                 <ul>{p.features.map((f) => <li key={f}>{f}</li>)}</ul>
                 {/* 누르면 신청서의 플랜을 미리 선택 */}
                 <a
-                  href="#apply"
+                  href="#/apply"
                   className={`btn ${p.featured ? "btn-primary" : "btn-ghost"} btn-block`}
                   onClick={() => onSelectPlan(p.id)}
                 >

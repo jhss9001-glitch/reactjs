@@ -1,6 +1,6 @@
 # K-Pharm Talk (React)
 
-K-뷰티 시대, 약사를 위한 외국어(영어·중국어·일본어) 복약지도 강의 홈페이지의 React 버전입니다.
+K-뷰티 시대, 약사를 위한 영어 복약지도 강의 홈페이지의 React 버전입니다.
 HTML/CSS/JS 버전([react](https://github.com/jhss9001-glitch/react))을 Vite + React로 옮겼습니다.
 
 ## 실행

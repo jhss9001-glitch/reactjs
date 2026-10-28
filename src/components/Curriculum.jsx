@@ -6,7 +6,7 @@ const sumMin = (m) => m.lessons.reduce((s, l) => s + l.min, 0);
 const total = CURRICULUM.reduce((n, m) => n + m.lessons.length, 0);
 const totalMin = CURRICULUM.reduce((n, m) => n + sumMin(m), 0);
 const SUMMARY =
-  `총 ${CURRICULUM.length}개 챕터 · ${total}강 · 약 ${Math.floor(totalMin / 60)}시간 ${totalMin % 60}분. 모든 레슨은 영어·중국어·일본어 버전으로 제공됩니다.`;
+  `총 ${CURRICULUM.length}개 챕터 · ${total}강 · 약 ${Math.floor(totalMin / 60)}시간 ${totalMin % 60}분. 모든 레슨은 원어민 영어 음성과 스크립트로 제공됩니다.`;
 
 export default function Curriculum() {
   return (

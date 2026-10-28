@@ -32,7 +32,7 @@ export default function LevelQuiz() {
         <h3>{result.title}</h3>
         <p>{result.text}</p>
         <div className="quiz-result-actions">
-          <a href="#curriculum" className="btn btn-ghost">커리큘럼 보기</a>
+          <a href="#/curriculum" className="btn btn-ghost">커리큘럼 보기</a>
           <button type="button" className="btn btn-primary" onClick={() => setQuiz(INITIAL)}>다시 풀기</button>
         </div>
       </div>

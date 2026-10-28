@@ -5,27 +5,43 @@
 
 import { Globe, MessageCircleOff, ShoppingBag, Speech, Stethoscope, TriangleAlert } from "lucide-react";
 
-export const LANGS = [
-  { code: "en", label: "English", tts: "en-US" },
-  { code: "zh", label: "中文", tts: "zh-CN" },
-  { code: "ja", label: "日本語", tts: "ja-JP" },
+/* 상단 메뉴 (id가 페이지 주소 #/id 가 됩니다) */
+export const NAV = [
+  { id: "why", label: "왜 지금인가" },
+  { id: "preview", label: "표현 미리듣기" },
+  { id: "curriculum", label: "커리큘럼" },
+  { id: "quiz", label: "레벨 테스트" },
+  { id: "pricing", label: "수강료" },
+  { id: "faq", label: "FAQ" },
 ];
 
-/* 히어로 상담 대화 (언어별로 순환 표시) */
-export const HERO_CHATS = {
-  en: [
-    { who: "guest", text: "Can I use this retinol cream in the morning?" },
-    { who: "rx", text: "Please use it only at night, and apply sunscreen during the day." },
-  ],
-  zh: [
-    { who: "guest", text: "这款视黄醇面霜早上可以用吗？" },
-    { who: "rx", text: "请只在晚上使用，白天务必涂抹防晒霜。" },
-  ],
-  ja: [
-    { who: "guest", text: "このレチノールクリーム、朝も使えますか。" },
-    { who: "rx", text: "夜だけお使いください。日中は必ず日焼け止めを塗ってください。" },
-  ],
-};
+/* 히어로 상담 대화 (상황별로 순환 표시) */
+export const HERO_CHATS = [
+  {
+    topic: "레티놀 크림",
+    tags: ["레티놀", "자외선차단", "사용시간"],
+    messages: [
+      { who: "guest", text: "Can I use this retinol cream in the morning?" },
+      { who: "rx", text: "Please use it only at night, and apply sunscreen during the day." },
+    ],
+  },
+  {
+    topic: "여드름 연고",
+    tags: ["과산화벤조일", "탈색주의"],
+    messages: [
+      { who: "guest", text: "How often should I put this on my pimples?" },
+      { who: "rx", text: "Once a day at first. It may bleach your towels, so please be careful." },
+    ],
+  },
+  {
+    topic: "영양제",
+    tags: ["비타민", "복용시점"],
+    messages: [
+      { who: "guest", text: "When is the best time to take this vitamin?" },
+      { who: "rx", text: "Take it with water right after a meal." },
+    ],
+  },
+];
 
 /* 왜 지금인가 */
 export const PAINS = [
@@ -49,57 +65,41 @@ export const PHRASES = [
     cat: "skin", situation: "레티놀 크림 사용 시간",
     ko: "밤에만 사용하시고, 낮에는 자외선 차단제를 꼭 바르세요.",
     en: "Use this only at night, and be sure to apply sunscreen during the day.",
-    zh: "请只在晚上使用，白天务必涂抹防晒霜。",
-    ja: "夜だけお使いください。日中は必ず日焼け止めを塗ってください。",
   },
   {
     cat: "skin", situation: "처음 쓰는 제품 패치 테스트",
     ko: "처음 사용하실 때는 팔 안쪽에 조금 발라 24시간 동안 반응을 확인하세요.",
     en: "Before first use, apply a small amount to your inner arm and check for any reaction for 24 hours.",
-    zh: "首次使用前，请在手臂内侧涂抹少量，观察24小时是否有不良反应。",
-    ja: "初めてお使いになる前に、腕の内側に少量塗って、24時間様子を見てください。",
   },
   {
     cat: "skin", situation: "자극 반응 시 대처",
     ko: "따끔거리거나 붉어지면 사용을 중단하고 물로 씻어내세요.",
     en: "If it stings or turns red, stop using it and rinse with water.",
-    zh: "如有刺痛或发红，请停止使用并用清水冲洗。",
-    ja: "ひりひりしたり赤くなったりしたら、使用を中止して水で洗い流してください。",
   },
   {
     cat: "topical", situation: "상처 재생 연고",
     ko: "하루 1~2회, 깨끗이 씻은 부위에 얇게 바르세요.",
     en: "Apply a thin layer to the clean affected area once or twice a day.",
-    zh: "每天1～2次，清洁患处后薄薄涂抹一层。",
-    ja: "1日1～2回、患部を清潔にしてから薄く塗ってください。",
   },
   {
     cat: "topical", situation: "여드름 연고 (과산화벤조일)",
     ko: "옷이나 수건이 탈색될 수 있으니 주의하세요.",
     en: "It may bleach your clothes or towels, so please be careful.",
-    zh: "可能会使衣物或毛巾褪色，请注意。",
-    ja: "衣類やタオルが脱色することがあるので、ご注意ください。",
   },
   {
     cat: "supp", situation: "비타민 복용 시점",
     ko: "식사 직후에 물과 함께 드세요.",
     en: "Take it with water right after a meal.",
-    zh: "请在饭后立即用水送服。",
-    ja: "食後すぐに水と一緒にお飲みください。",
   },
   {
     cat: "ask", situation: "임신·수유 확인",
     ko: "혹시 임신 중이시거나 수유 중이신가요?",
     en: "Are you pregnant or breastfeeding?",
-    zh: "请问您是否怀孕或正在哺乳？",
-    ja: "妊娠中、または授乳中ではありませんか。",
   },
   {
     cat: "ask", situation: "알레르기 확인",
     ko: "약이나 화장품에 알레르기가 있으신가요?",
     en: "Do you have any allergies to medicines or cosmetics?",
-    zh: "您对药物或化妆品过敏吗？",
-    ja: "お薬や化粧品でアレルギーはありますか。",
   },
 ];
 
@@ -152,7 +152,7 @@ export const CURRICULUM = [
       { t: "임신·수유·알레르기 확인 루틴", min: 14 },
       { t: "병원 진료가 필요할 때 안내하기", min: 15 },
       { t: "결제·면세·교환 응대 표현", min: 12 },
-      { t: "언어별 실전 롤플레이 (3개 국어)", min: 30 },
+      { t: "원어민과 함께하는 실전 롤플레이", min: 30 },
     ],
   },
 ];
@@ -173,12 +173,12 @@ export const QUIZ = [
     answer: 1,
   },
   {
-    q: "중국어 “饭后”는 어떤 복용 시점일까요?",
-    options: ["식전", "식후", "취침 전", "공복"],
+    q: "“Take it on an empty stomach.”는 어떤 복용 시점일까요?",
+    options: ["식후", "공복", "취침 전", "식사 중"],
     answer: 1,
   },
   {
-    q: "일본어 “日焼け止め”가 가리키는 제품은?",
+    q: "“sunscreen”이 가리키는 제품은?",
     options: ["보습 크림", "클렌징 오일", "자외선 차단제", "여드름 패치"],
     answer: 2,
   },
@@ -200,27 +200,27 @@ export const TARGETS = [
   "명동·홍대·성수 등 관광 상권 약국에서 근무하는 약사",
   "더마 코스메틱 상담을 강화하고 싶은 약국 개설자",
   "외국인 고객 앞에서 영어가 입에서 맴돌기만 했던 분",
-  "중국어·일본어 응대가 필요하지만 시간이 부족한 분",
+  "바쁜 근무 중에도 짧게 반복해 익힐 수 있는 강의가 필요한 분",
   "약대생·신입 약사로 경쟁력을 키우고 싶은 분",
 ];
 
 /* 강사진 (실제 강사 정보로 교체하세요) */
 export const TEAM = [
   { icon: Stethoscope, role: "대표 강사 · 약사", text: "관광 상권 약국 실무 경험을 바탕으로 상황별 커리큘럼과 복약지도 스크립트를 설계합니다." },
-  { icon: Speech, role: "원어민 튜터 · EN / ZH / JA", text: "언어별 원어민 튜터가 발음과 자연스러운 표현을 코칭하고 롤플레이 상대가 되어 드립니다." },
+  { icon: Speech, role: "원어민 튜터 · English", text: "영어 원어민 튜터가 발음과 자연스러운 표현을 코칭하고 롤플레이 상대가 되어 드립니다." },
 ];
 
 /* 수강료 */
 export const PLANS = [
   {
-    id: "single", name: "단과", desc: "1개 언어 집중",
+    id: "basic", name: "베이직", desc: "VOD 자율 학습",
     price: 149000, early: 119000, period: "3개월 수강",
-    features: ["선택 언어 1개 전 강의", "표현 스크립트 PDF", "복약지도 카드 1종"],
+    features: ["영어 복약지도 전 강의", "표현 스크립트 PDF", "약국 비치용 복약지도 카드"],
   },
   {
-    id: "all", name: "올인원", desc: "3개 국어 전체", featured: true,
-    price: 289000, early: 219000, period: "6개월 수강",
-    features: ["영어·중국어·일본어 전 강의", "원어민 발음 피드백 4회", "복약지도 카드 3종 (EN·ZH·JA)", "실전 롤플레이 라이브 세션"],
+    id: "pro", name: "올인원", desc: "VOD + 원어민 코칭", featured: true,
+    price: 280000, early: 199000, period: "6개월 수강",
+    features: ["영어 복약지도 전 강의", "원어민 발음 피드백 4회", "약국 비치용 복약지도 카드", "실전 롤플레이 라이브 세션"],
   },
   {
     id: "team", name: "약국 단체", desc: "3인 이상 약국·체인",
@@ -231,9 +231,9 @@ export const PLANS = [
 
 /* FAQ */
 export const FAQS = [
-  { q: "외국어를 거의 못 해도 따라갈 수 있나요?", a: "네. 문장 구조를 고정하고 용량·횟수·시점만 바꿔 끼우는 패턴 방식이라, 기초 단어만 알아도 첫 주부터 실제 응대에 쓸 수 있습니다." },
+  { q: "영어를 거의 못 해도 따라갈 수 있나요?", a: "네. 문장 구조를 고정하고 용량·횟수·시점만 바꿔 끼우는 패턴 방식이라, 기초 단어만 알아도 첫 주부터 실제 응대에 쓸 수 있습니다." },
   { q: "강의는 어떤 방식으로 진행되나요?", a: "온라인 VOD로 언제든 수강할 수 있고, 올인원 플랜은 월 1회 라이브 롤플레이 세션이 추가됩니다." },
-  { q: "약국 비치용 복약지도 카드는 어떤 건가요?", a: "자주 쓰는 사용법·주의사항 문장을 3개 국어로 정리한 인쇄용 PDF입니다. 고객에게 손가락으로 가리키며 설명할 때 유용합니다." },
+  { q: "약국 비치용 복약지도 카드는 어떤 건가요?", a: "자주 쓰는 사용법·주의사항 문장을 영어로 정리한 인쇄용 PDF입니다. 고객에게 손가락으로 가리키며 설명할 때 유용합니다." },
   { q: "환불 규정이 궁금해요.", a: "수강 시작 후 7일 이내, 진도율 10% 미만이면 전액 환불됩니다. 이후에는 잔여 기간에 따라 부분 환불됩니다." },
-  { q: "다른 언어도 추가될 예정인가요?", a: "태국어·베트남어 과정을 준비 중이며, 기존 수강생에게 우선 안내해 드립니다." },
+  { q: "발음에 자신이 없어도 괜찮나요?", a: "모든 레슨에 원어민 음성이 제공되고, 올인원 플랜은 원어민 튜터의 발음 피드백을 받을 수 있습니다. 완벽한 발음보다 정확한 정보 전달을 목표로 연습합니다." },
 ];

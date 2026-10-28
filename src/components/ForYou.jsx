@@ -3,7 +3,7 @@ import Reveal from "./Reveal.jsx";
 
 export default function ForYou() {
   return (
-    <section className="section section-tint">
+    <section className="section">
       <div className="container two-col">
         <Reveal>
           <p className="eyebrow">For you</p>
