@@ -3,7 +3,7 @@
  * 페이지에 표시되는 콘텐츠는 모두 여기서 수정합니다.
  * ========================================================= */
 
-import { BookOpenText, Globe, MessageCircleOff, Plane, ShoppingBag, Stethoscope, TriangleAlert } from "lucide-react";
+import { Globe, MessageCircleOff, ShoppingBag, TriangleAlert } from "lucide-react";
 
 /* 상단 메뉴 (id가 페이지 주소 #/id 가 됩니다) */
 export const NAV = [
@@ -203,20 +203,20 @@ export const TARGETS = [
   "약대생·신입 약사로 경쟁력을 키우고 싶은 분",
 ];
 
-/* 강사진 */
+/* 강사진 (look: 일러스트 사진 설정 — 실제 사진이 생기면 교체하세요) */
 export const TEAM = [
   {
-    icon: Stethoscope, name: "박지희", role: "대표 강사 · 약사",
+    look: { hair: "long", top: "#9fd3c7", coat: true }, name: "박지희", role: "대표 강사 · 약사",
     career: ["약사 경력 12년", "외국인 고객 중심 ‘명동 헬로우약국’ 운영 5년차", "커리큘럼·복약지도 스크립트 총괄"],
     quote: "매일 카운터에서 실제로 받은 질문만 모았습니다. 약사님의 다음 상담이 오늘보다 한 문장 더 길어지도록 돕겠습니다.",
   },
   {
-    icon: Plane, name: "김도윤", role: "실전 회화 · 롤플레이 강사",
+    look: { hair: "short", top: "#2f4a6d" }, name: "김도윤", role: "실전 회화 · 롤플레이 강사",
     career: ["University of Washington 공중보건학(Public Health) 학사", "미국 시애틀 거주 10년 · 현지 드럭스토어 근무 경험", "실전 롤플레이 라이브 세션 진행"],
     quote: "교과서 영어가 아닌, 외국인 고객이 실제로 쓰는 말투로 연습합니다. 틀려도 괜찮으니 먼저 말을 꺼내는 용기를 드리겠습니다.",
   },
   {
-    icon: BookOpenText, name: "이서연", role: "영어 표현 · 발음 교육 강사",
+    look: { hair: "bob", top: "#b86b5e", glasses: true }, name: "이서연", role: "영어 표현 · 발음 교육 강사",
     career: ["한국외국어대학교 영미문학·문화학과 학사", "한국외국어대학교 교육대학원 영어교육전공 석사", "표현 패턴·발음 교육 설계"],
     quote: "어려운 문법 없이도 정확하게 전달되는 문장 구조를 알려드리겠습니다. 외워서 끝나는 영어가 아니라, 바로 꺼내 쓰는 영어를 만들겠습니다.",
   },
